@@ -1,0 +1,17 @@
+Model: LightGBM
+Dataset: smote_enn
+Best Params: {'num_leaves': 79, 'max_depth': 10, 'lambda_l1': 0.006290644294586149, 'lambda_l2': 0.11400863701127326, 'feature_fraction': 0.7962072844310213, 'bagging_fraction': 0.5232252063599989, 'bagging_freq': 5, 'min_child_samples': 21}
+Best Validation F1: 0.9725322236909586
+Test ROC AUC: 0.9005271695052717
+Optimal Threshold: 0.75
+Test F1 (Optimized): 0.7065217391304348
+
+Classification Report:
+              precision    recall  f1-score   support
+
+         0.0       0.95      0.95      0.95       548
+         1.0       0.69      0.72      0.71        90
+
+    accuracy                           0.92       638
+   macro avg       0.82      0.83      0.83       638
+weighted avg       0.92      0.92      0.92       638
