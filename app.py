@@ -117,23 +117,9 @@ def get_exchange_rate(pair="KRW=X"):
         return 1200.0  # 에러 발생 시 기본값 설정 (예: 1200원)
 
 # --- 사이드바 UI 변경 ---
-st.sidebar.header("설정")
+currency_symbol = st.sidebar.text_input("화폐 단위", value="$")
 
-# 기존 text_input 대신 라디오 버튼으로 화폐 선택 기능 구현
-currency_option = st.sidebar.radio(
-    "화폐 단위 선택",
-    ("USD ($)", "KRW (₩) - 실시간 환율 적용")
-)
 
-# --- 환율 적용 로직 ---
-if "KRW" in currency_option:
-    current_rate = get_exchange_rate("KRW=X") # USD -> KRW 환율 조회
-    currency_symbol = "₩"
-    exchange_factor = current_rate
-    st.sidebar.success(f"현재 적용 환율: 1 USD = {current_rate:,.2f} KRW")
-else:
-    currency_symbol = "$"
-    exchange_factor = 1.0
 
 # -----------------------------------------------------------------------------
 # 4. 페이지별 로직
